@@ -23,46 +23,26 @@ print(df.describe())
 
 #Potential & Wage
 plt.figure(figsize=(7, 5))
-"""ax = sns.scatterplot(x=df['potential'], y=df['wage_eur'])
-plt.xlabel("Potential")
-plt.ylabel("Wage(EUR)")
-plt.title("Potential & Wage", fontsize=15)"""
 pf.scatterPlotSeaborn(df, 'potential', 'wage_eur')
 plt.show()
 
 #Potential & Value
 fig, ax = plt.subplots(figsize=(7, 5))
-"""plt.scatter(x=df['potential'], y=df['value_eur'])
-plt.xlabel("potential")
-plt.ylabel("Value in EUR")
-plt.title("Potential & Value in EUR", fontsize=15)"""
 pf.scatterPlotMatplot(df, 'potential', 'value_eur')
 plt.show()
 
 #Reputation & Value
 fig, ax = plt.subplots(figsize=(7, 5))
-"""plt.scatter(x=df['international_reputation'], y=df['value_eur'] )
-plt.xlabel("International Reputation")
-plt.ylabel("Value in EUR")
-plt.title("Reputation & Value in EUR", fontsize=15)"""
 pf.scatterPlotMatplot(df, 'international_reputation', 'value_eur')
 plt.show()
 
 #Reputation & Wages
 fig, ax = plt.subplots(figsize=(7, 5))
-"""plt.scatter(x=df['international_reputation'], y=df['wage_eur'] )
-plt.xlabel("International Reputation")
-plt.ylabel("Wage in EUR")
-plt.title("Reputation & wages in EUR", fontsize = 15)"""
 pf.scatterPlotMatplot(df, 'international_reputation', 'wage_eur')
 plt.show()
 
 #Height Vs Potential
 fig, ax = plt.subplots(figsize=(8, 5))
-"""ax = sns.scatterplot(x=df['height_cm'], y=df['potential'])
-plt.xlabel("Height")
-plt.ylabel("Potential")
-plt.title("Relationship between Height and Potential", fontsize=16)"""
 pf.scatterPlotMatplot(df, 'height_cm', 'potential')
 plt.show()
 
@@ -73,23 +53,6 @@ print(top_15.head(5))
 #Overall Rating vs Mentality Composure of top 15
 fig, ax = plt.subplots(figsize=(8, 5))
 
-"""plt.scatter(top_15['overall'], top_15['mentality_composure'])
-
-plt.text(top_15.iloc[0]['overall'], top_15.iloc[0]['mentality_composure'], top_15.iloc[0]['short_name'])
-plt.text(top_15.iloc[1]['overall'], top_15.iloc[1]['mentality_composure'], top_15.iloc[1]['short_name'])
-plt.text(top_15.iloc[2]['overall'], top_15.iloc[2]['mentality_composure'], top_15.iloc[2]['short_name'])
-plt.text(top_15.iloc[3]['overall'], top_15.iloc[3]['mentality_composure'], top_15.iloc[3]['short_name'])
-plt.text(top_15.iloc[4]['overall'], top_15.iloc[4]['mentality_composure'], top_15.iloc[4]['short_name'])
-plt.text(top_15.iloc[5]['overall'], top_15.iloc[5]['mentality_composure'], top_15.iloc[5]['short_name'])
-plt.text(top_15.iloc[6]['overall'], top_15.iloc[6]['mentality_composure'], top_15.iloc[6]['short_name'])
-plt.text(top_15.iloc[7]['overall'], top_15.iloc[7]['mentality_composure'], top_15.iloc[7]['short_name'])
-plt.text(top_15.iloc[8]['overall'], top_15.iloc[8]['mentality_composure'], top_15.iloc[8]['short_name'])
-plt.text(top_15.iloc[9]['overall'], top_15.iloc[9]['mentality_composure'], top_15.iloc[9]['short_name'])
-plt.text(top_15.iloc[10]['overall'], top_15.iloc[10]['mentality_composure'], top_15.iloc[10]['short_name'])
-plt.text(top_15.iloc[11]['overall'], top_15.iloc[11]['mentality_composure'], top_15.iloc[11]['short_name'])
-plt.text(top_15.iloc[12]['overall'], top_15.iloc[12]['mentality_composure'], top_15.iloc[12]['short_name'])
-plt.text(top_15.iloc[13]['overall'], top_15.iloc[13]['mentality_composure'], top_15.iloc[13]['short_name'])
-plt.text(top_15.iloc[14]['overall'], top_15.iloc[14]['mentality_composure'], top_15.iloc[14]['short_name'])"""
 pf.topNScatter(top_15,'overall', 'mentality_composure', 'short_name')
 
 ax.set_title("Overall Rating vs Mentality Composure")
@@ -101,23 +64,6 @@ plt.show()
 #top 15 Potential Vs Wages
 fig, ax = plt.subplots(figsize=(8, 5))
 
-"""plt.scatter(top_15['potential'], top_15['wage_eur'])
-
-plt.text(top_15.iloc[0]['potential'], top_15.iloc[0]['wage_eur'], top_15.iloc[0]['short_name'])
-plt.text(top_15.iloc[1]['potential'], top_15.iloc[1]['wage_eur'], top_15.iloc[1]['short_name']) #for better view
-plt.text(top_15.iloc[2]['potential'], top_15.iloc[2]['wage_eur'], top_15.iloc[2]['short_name'])
-plt.text(top_15.iloc[3]['potential'], top_15.iloc[3]['wage_eur'], top_15.iloc[3]['short_name'])
-plt.text(top_15.iloc[4]['potential'], top_15.iloc[4]['wage_eur'], top_15.iloc[4]['short_name'])
-plt.text(top_15.iloc[5]['potential'], top_15.iloc[5]['wage_eur'], top_15.iloc[5]['short_name'])
-plt.text(top_15.iloc[6]['potential'], top_15.iloc[6]['wage_eur'], top_15.iloc[6]['short_name'])
-plt.text(top_15.iloc[7]['potential'], top_15.iloc[7]['wage_eur'], top_15.iloc[7]['short_name'])
-plt.text(top_15.iloc[8]['potential'], top_15.iloc[8]['wage_eur'], top_15.iloc[8]['short_name'])
-plt.text(top_15.iloc[9]['potential'], top_15.iloc[9]['wage_eur'], top_15.iloc[9]['short_name'])
-plt.text(top_15.iloc[10]['potential'], top_15.iloc[10]['wage_eur'], top_15.iloc[10]['short_name'])
-plt.text(top_15.iloc[11]['potential'], top_15.iloc[11]['wage_eur'], top_15.iloc[11]['short_name'])
-plt.text(top_15.iloc[12]['potential'], top_15.iloc[12]['wage_eur'], top_15.iloc[12]['short_name'])
-plt.text(top_15.iloc[13]['potential'], top_15.iloc[13]['wage_eur'], top_15.iloc[13]['short_name'])
-plt.text(top_15.iloc[14]['potential'], top_15.iloc[14]['wage_eur'], top_15.iloc[14]['short_name'])"""
 pf.topNScatter(top_15, 'potential', 'wage_eur', 'short_name')
 
 ax.set_title("Potential vs Wages of top 15")
